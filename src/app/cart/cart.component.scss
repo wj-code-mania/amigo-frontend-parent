@@ -1,0 +1,22 @@
+.empty-cart-btn{
+    width: 100% !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    background-color: rgb(0, 0, 255);
+    text-align: center;
+}
+
+.removeCartItem, .commentCartItem, .customizeCartItem{
+    cursor: pointer;
+}
+
+.removeCartItem:hover, .commentCartItem:hover, .customizeCartItem:hover{
+    cursor: pointer;
+    color: #f00;
+}
+
+.commentTextArea{
+    width: 100%;
+    height : 70px;
+}

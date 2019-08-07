@@ -1,0 +1,484 @@
+<!-- BANNER -->
+<section class="bannercontainer bannercontainerV1">
+    <div class="fullscreenbanner-container">
+        <div class="fullscreenbanner">
+        <slideshow #slideshow [height]="400"
+            [minHeight]="'525px'"
+            [autoPlay]="true"
+            [showArrows]="false"
+            [imageUrls]="imageUrlArray"
+            [lazyLoad]="imageSources?.length > 1"
+            [autoPlayWaitForLazyLoad]="true">
+        </slideshow>
+        <button class="btn-slide-paginater left" (click)="moveSlideImg(-1)"><</button>
+        <button class="btn-slide-paginater right" (click)="moveSlideImg(1)">></button>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="clearfix linkSection hidden-xs">
+  <div class="sectionLinkArea hidden-xs scrolling">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="" class="sectionLink bg-color-1" id="coursesLink">
+            <i class="fa fa-cutlery linkIcon border-color-1" aria-hidden="true"></i>
+            <span class="linkText">School Canteen</span>
+            <i class="fa fa-chevron-down locateArrow" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <a href="" class="sectionLink bg-color-2" id="teamLink">
+            <i class="fa fa-female linkIcon border-color-2" aria-hidden="true"></i>
+            <span class="linkText">School Uniform</span>
+            <i class="fa fa-chevron-down locateArrow" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <a href="" class="sectionLink bg-color-3" id="galleryLink">
+            <i class="fa fa-music  linkIcon border-color-3" aria-hidden="true"></i>
+            <span class="linkText">Events</span>
+            <i class="fa fa-chevron-down locateArrow" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <a href="#latestNews" class="sectionLink bg-color-4" id="newsLink">
+            <i class="fa fa-files-o linkIcon border-color-4" aria-hidden="true"></i>
+            <span class="linkText">News</span>
+            <i class="fa fa-chevron-down locateArrow" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>
+
+<!-- FEATURE SECTION -->
+<section class="mainContent full-width clearfix featureSection">
+  <div class="container">
+    <div class="sectionTitle text-center">
+      <h2>
+        <span class="shape shape-left bg-color-4"></span>
+        <span>Our Features</span>
+        <span class="shape shape-right bg-color-4"></span>
+      </h2>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 col-xs-12">
+        <div class="media featuresContent">
+          <span class="media-left bg-color-1">
+            <i class="fa fa-hand-o-up bg-color-1" aria-hidden="true"></i>
+          </span>
+          <div class="media-body">
+            <h3 class="media-heading color-1">Online Ordering</h3>
+            <p>Order and book all the school services in one place.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <div class="media featuresContent">
+          <span class="media-left bg-color-2">
+            <i class="fa fa-credit-card bg-color-2" aria-hidden="true"></i>
+          </span>
+          <div class="media-body">
+            <h3 class="media-heading color-2">Go Cashless</h3>
+            <p>A completely cashless platform to pay for all the school services.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <div class="media featuresContent">
+          <span class="media-left bg-color-3">
+            <i class="fa fa-share-alt bg-color-3" aria-hidden="true"></i>
+          </span>
+          <div class="media-body">
+            <h3 class="media-heading color-3">24 X 7 Service</h3>
+            <p>24x7 Awesome Customer Service.</p><br><br>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <div class="media featuresContent">
+          <span class="media-left bg-color-4">
+            <i class="fa fa-cutlery bg-color-4" aria-hidden="true"></i>
+          </span>
+          <div class="media-body">
+            <h3 class="media-heading color-4">Canteen Ordering</h3>
+            <p>Order your child’s lunch online with flexible custom and healthy options.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <div class="media featuresContent">
+          <span class="media-left bg-color-5">
+            <i class="fa fa-music bg-color-5" aria-hidden="true"></i>
+          </span>
+          <div class="media-body">
+            <h3 class="media-heading color-5">Event Booking</h3>
+            <p>Book tickets online and reserve the seat at all the school events.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+        <div class="media featuresContent">
+          <span class="media-left bg-color-6">
+            <i class="fa fa-female bg-color-6" aria-hidden="true"></i>
+          </span>
+          <div class="media-body">
+            <h3 class="media-heading color-6">Uniform Ordering</h3>
+            <p>Shop online for all types of school uniforms with custom measurements and styling options.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="full-width clearfix homeGallerySection" id="ourGallery">
+  <div class="container">
+    <div class="sectionTitle text-center">
+      <h2>
+        <span class="shape shape-left bg-color-4"></span>
+        <span>How AmigoSchools works?</span>
+        <span class="shape shape-right bg-color-4"></span>
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/-Ne3UzLh4PY" frameborder="0" allow="autoplay; encrypted-media"
+          allowfullscreen=""></iframe>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-6">
+        <br>
+          <strong style="text-align:justify">Amigo Schools provide user-friendly and convenient online platform to schools and parents to manage student activities.
+              <br> We aim at improving the interaction between parents and the school.</strong><br><br>
+            <strong>Our online services replace a lot of manual work through automated processes.</strong><br><br>
+            <ul class="amigo-automation-features">
+              <li> <h5><i class="fa fa-check-square-o fa-check-css"></i> Canteen orders</h5></li>
+              <li> <h5><i class="fa fa-check-square-o fa-check-css"></i> School Uniforms</h5></li>
+              <li> <h5><i class="fa fa-check-square-o fa-check-css"></i> Register for events</h5></li>
+              <li> <h5><i class="fa fa-check-square-o fa-check-css"></i> Book seat in a school bus</h5></li>
+              <li> <h5><i class="fa fa-check-square-o fa-check-css"></i> Volunteering</h5></li>
+            </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHITE SECTION -->
+<section class="whiteSection full-width clearfix homeGallerySection" id="ourGallery">
+  <div class="container">
+    <div class="sectionTitle text-center">
+      <h2>
+        <span class="shape shape-left bg-color-4"></span>
+        <span>Our Gallery</span>
+        <span class="shape shape-right bg-color-4"></span>
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="filter-container isotopeFilters">
+          <ul class="list-inline filter">
+            <li class="active"><a href="#" data-filter="*">View All</a></li>
+            <li ><a href="#" data-filter=".canteen">Canteen</a></li>
+            <li><a href="#" data-filter=".uniform">Uniform</a></li>
+            <li><a href="#" data-filter=".events">Events</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row isotopeContainer" id="container">
+
+        <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector canteen">
+            <article class="">
+              <figure>
+                <img src="assets/img/canteen/pexels-photo-461198.jpeg" alt="image" class="img-rounded">
+                <div class="overlay-background">
+                  <div class="inner"></div>
+                </div>
+                <div class="overlay">
+                  <a class="fancybox-pop" rel="portfolio-1" href="assets/img/canteen/pexels-photo-461198.jpeg">
+                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </figure>
+            </article>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector canteen">
+            <article class="">
+              <figure>
+                <img src="assets/img/canteen/pexels-photo-376464.jpeg" alt="image" class="img-rounded">
+                <div class="overlay-background">
+                  <div class="inner"></div>
+                </div>
+                <div class="overlay">
+                  <a class="fancybox-pop" rel="portfolio-1" href="assets/img/canteen/pexels-photo-376464.jpeg">
+                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </figure>
+            </article>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector canteen">
+              <article class="">
+                <figure>
+                  <img src="assets/img/canteen/pexels-photo-62097.jpeg" alt="image" class="img-rounded">
+                  <div class="overlay-background">
+                    <div class="inner"></div>
+                  </div>
+                  <div class="overlay">
+                    <a class="fancybox-pop" rel="portfolio-1" href="assets/img/canteen/pexels-photo-62097.jpeg">
+                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </figure>
+              </article>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector canteen">
+                <article class="">
+                  <figure>
+                    <img src="assets/img/canteen/pexels-photo-247685.png" alt="image" class="img-rounded">
+                    <div class="overlay-background">
+                      <div class="inner"></div>
+                    </div>
+                    <div class="overlay">
+                      <a class="fancybox-pop" rel="portfolio-1" href="assets/img/canteen/pexels-photo-247685.png">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </figure>
+                </article>
+              </div>
+
+      <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector uniform">
+        <article class="">
+          <figure>
+            <img src="assets/img/home/home_gallery/gallery_sm_1.jpg" alt="image" class="img-rounded">
+            <div class="overlay-background">
+              <div class="inner"></div>
+            </div>
+            <div class="overlay">
+              <a class="fancybox-pop" rel="portfolio-1" href="assets/img/home/home_gallery/gallery_lg_1.jpg">
+                <i class="fa fa-search-plus" aria-hidden="true"></i>
+              </a>
+            </div>
+          </figure>
+        </article>
+      </div>
+
+      <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector events">
+        <article class="">
+          <figure>
+            <img src="assets/img/canteen/pexels-photo-61129.jpeg" alt="image" class="img-rounded">
+            <div class="overlay-background">
+              <div class="inner"></div>
+            </div>
+            <div class="overlay">
+              <a class="fancybox-pop" rel="portfolio-1" href="assets/img/canteen/pexels-photo-61129.jpeg">
+                <i class="fa fa-search-plus" aria-hidden="true"></i>
+              </a>
+            </div>
+          </figure>
+        </article>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector events">
+          <article class="">
+            <figure>
+              <img src="assets/img/canteen/pexels-photo-296301.jpeg" alt="image" class="img-rounded">
+              <div class="overlay-background">
+                <div class="inner"></div>
+              </div>
+              <div class="overlay">
+                <a class="fancybox-pop" rel="portfolio-1" href="assets/img/canteen/pexels-photo-296301.jpeg">
+                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                </a>
+              </div>
+            </figure>
+          </article>
+        </div> <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector events">
+            <article class="">
+              <figure>
+                <img src="assets/img/canteen/pexels-photo-296308.jpeg" alt="image" class="img-rounded">
+                <div class="overlay-background">
+                  <div class="inner"></div>
+                </div>
+                <div class="overlay">
+                  <a class="fancybox-pop" rel="portfolio-1" href="assets/img/canteen/pexels-photo-296308.jpeg">
+                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </figure>
+            </article>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector events">
+              <article class="">
+                <figure>
+                  <img src="assets/img/canteen/pexels-photo-707193.jpeg" alt="image" class="img-rounded">
+                  <div class="overlay-background">
+                    <div class="inner"></div>
+                  </div>
+                  <div class="overlay">
+                    <a class="fancybox-pop" rel="portfolio-1" href="assets/img/canteen/pexels-photo-707193.jpeg">
+                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </figure>
+              </article>
+            </div>
+    </div>
+  </div>
+</section>
+  
+<!-- COUNT UP SECTION-->
+<section class="countUpSection">
+  <div class="container">
+    <div class="sectionTitleSmall">
+      <h2>Amigo Schools Amazing Facts</h2>
+      <p>Here are some amazing AmigoSchool Userbase facts.
+      <a href="">Register with us now.</a></p>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-12">
+        <div class="text-center">
+          <div class="counter">3</div>
+          <div class="counterInfo bg-color-1">countries</div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <div class="text-center">
+          <div class="counter">179</div>
+          <div class="counterInfo bg-color-2">Happy Schools</div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <div class="text-center">
+          <div class="counter">1043</div>
+          <div class="counterInfo bg-color-3">Happy parents</div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <div class="text-center">
+          <div class="counter">3256</div>
+          <div class="counterInfo bg-color-4">pupils</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHITE SECTION -->
+<section class="whiteSection full-width clearfix newsSection" id="latestNews">
+  <div class="container">
+    <div class="sectionTitle text-center">
+      <h2>
+        <span class="shape shape-left bg-color-4"></span>
+        <span>Latest Events</span>
+        <span class="shape shape-right bg-color-4"></span>
+      </h2>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 col-xs-12 block">
+        <div class="thumbnail thumbnailContent">
+          <a href="single-event-left-sidebar.html" ><img src="assets/img/home/event/event-1.jpg" alt="image" class="img-responsive"></a>
+          <div class="sticker-round bg-color-1">10 <br>July</div>
+          <div class="caption border-color-1">
+            <h3><a href="single-event-left-sidebar.html" class="color-1">Science & Technology Day.</a></h3>
+            <ul class="list-inline">
+              <li><a href="single-event-left-sidebar.html"><i class="fa fa-user" aria-hidden="true"></i>Organizer – Mullavilly Primary School</a></li>
+              <li><a href="single-event-left-sidebar.html"><i class="fa fa-comments-o" aria-hidden="true"></i>4 Comments</a></li>
+            </ul>
+            <p>The Science & Technology day is organized at Mullavilly Primary School on July 10th. The event focuses on various presentations on students’ Science and Technology projects. Book your tickets now</p>
+            <ul class="list-inline btn-yellow">
+              <li><a href="single-event-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12 block">
+        <div class="thumbnail thumbnailContent">
+          <a><img src="assets/img/home/event/event-2.jpg" alt="image" class="img-responsive"></a>
+          <div class="sticker-round bg-color-2">15 <br>July</div>
+          <div class="caption border-color-2">
+            <h3><a class="color-2">Olympic Sports day.</a></h3>
+            <ul class="list-inline">
+              <li><a><i class="fa fa-user" aria-hidden="true"></i>Organizaer - Cawston Grange Primary School</a></li>
+              <li><a><i class="fa fa-comments-o" aria-hidden="true"></i>4 Comments</a></li>
+            </ul>
+            <p>Olympic Sports Day will be hosted by Cawston Grange Primary School on July 15th. You shall witness various sports activities taking place for students from age 9 to 20.</p>
+            <br>
+            <ul class="list-inline btn-green">
+              <li><a  class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12 block">
+        <div class="thumbnail thumbnailContent">
+          <a><img src="assets/img/home/event/event-3.jpg" alt="image" class="img-responsive"></a>
+          <div class="sticker-round bg-color-3">22 <br>July</div>
+          <div class="caption border-color-3">
+            <h3><a class="color-3">Disney Day.</a></h3>
+            <ul class="list-inline">
+              <li><a><i class="fa fa-user" aria-hidden="true"></i>Organizaer - Schoolhouse Education</a></li>
+              <li><a><i class="fa fa-comments-o" aria-hidden="true"></i>4 Comments</a></li>
+            </ul>
+            <p>Disney Day is an all day Arts event organized by Schoolhouse Education on July 22nd. Students from all the grades will be participating in arts activities like Drama, Musicals, Painting.</p>
+            <br>
+            <ul class="list-inline btn-red">
+              <li><a class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btnArea">
+      <a href="all-events.html" class="btn btn-primary">View more</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHT SECTION -->
+<section class="lightSection full-width clearfix homeContactSection" id="connect">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-xs-12">
+        <div class="homeContactContent">
+          <h2>Our Address</h2>
+          <!--<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+          <address>
+            <p><i class="fa fa-map-marker bg-color-1" aria-hidden="true"></i>Waman Ganesh Heights, BootStart, Behind Cafe Peter Donuts, Bavdhan, Pune, Maharashtra 411021.</p>
+            <p><i class="fa fa-envelope bg-color-2" aria-hidden="true"></i><a href="mailto:info@amigoschools.com">info@amigoschools.com</a></p>
+            <p><i class="fa fa-phone bg-color-4" aria-hidden="true"></i>+91-8390257393</p>
+          </address>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <div class="homeContactContent"><!--action="http://www.amigos.com/connect.php" method="POST"-->
+          <p>If you want to setup your School on AmigoSchools, Please send us a message and we will get back to you within 24 hours.</p>
+    <form  role="form" id="contactForm">
+            <div class="form-group">
+              <i class="fa fa-user"></i>
+              <input type="text" class="form-control border-color-1" id="name" placeholder="First name" name="name" required>
+            </div>
+            <div class="form-group">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <input type="email" class="form-control border-color-2" id="email" placeholder="Email address" name="email" required>
+            </div>
+            <div class="form-group">
+              <i class="fa fa-comments" aria-hidden="true"></i>
+              <textarea class="form-control border-color-4" placeholder="Write message" id="message" name="message" required></textarea>
+            </div>
+    <p id="contactFormResult" style="color:red"></p>
+            <button id="btnSendMessage" type="button" class="btn btn-primary" >Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

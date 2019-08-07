@@ -1,0 +1,294 @@
+<div class="mainContent1">
+  <div class="row">
+    <div class="container">
+      <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3  row-padding">
+        <ol class="breadcrumb breadcrumb-css">
+          <li class="breadcrumb-item">
+            <a href="home.html">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="javascript:;" (click)="chooseCategory(0)">Canteen</a>
+          </li>
+          <li class="breadcrumb-item active">
+            {{current_category_name}}
+          </li>
+        </ol>
+      </div>
+
+      <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 ">
+        <div class="input-group">
+          <input type="text" id="datepicker" class="form-control" [(ngModel)]="curDateTime" placeholder="Select Date" aria-describedby="basic-addon2">
+          <span class="input-group-addon bg-color-11 datepicker-btn">
+            <a href="javascript:;" class="bg-color-11 datepicker-btn " (click)="changeDate()">Go</a>
+          </span>
+        </div>
+  <div class="visible-xl">
+    <br/>
+    </div>
+      </div>
+
+      <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+        <div class="input-group">
+          <input name="keyword" type="text" [(ngModel)]="category_filter.keyword" class="form-control" placeholder="Enter Your Search" aria-describedby="basic-addon2">
+          <span class="input-group-addon bg-color-11 datepicker-btn" id="basic-addon2" (click)="search()">Search</span>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+
+  <!-- PRODUCT SECTION -->
+<section class="mainContent full-width clearfix productSection">
+  <div class="container">
+    <div class="row">
+  <div class="col-md-3 col-sm-5 col-xs-12 pull-left">
+        <aside>
+          <div class="panel panel-default courseSidebar">
+            <div class="panel-heading bg-color-5 border-color-5">
+              <h3 class="panel-title">Categories</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="list-unstyled categoryItem">
+
+                <li *ngFor="let category_info of category_list">
+                  <a [ngClass]="{'active-category': category_info.id==category_filter.categoryId}" href="javascript:;" (click)="chooseCategory(category_info.id)">{{category_info.name}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel panel-default courseSidebar">
+            <div class="panel-heading bg-color-2 border-color-2">
+              <h3 class="panel-title">Filter By</h3>
+            </div>
+            <div class="panel-body">
+              <div class="lightDrop">
+                <select name="guiest_id4" id="guiest_id4" class="select-drop form-control" [(ngModel)]="category_filter.classTypeId">
+                  <option value="0">All Classes</option>
+                  <option *ngFor="let class_type of class_type_list" value="{{class_type.id}}">{{class_type.name}}</option>
+                </select>
+              </div>
+              <div class="priceRange">
+                <div class="price-slider-inner">
+                  <span class="amount-wrapper">
+                    Price:
+                    <input type="text" id="price-amount-1" readonly>
+                    <strong>-</strong>
+                    <input type="text" id="price-amount-2" readonly>
+                  </span>
+                  <div id="price-range"></div>
+                </div>
+                <input class="btn btn-primary bg-color-2" type="button" value="Filter" (click)="filter();">
+                <!-- <span class="priceLabel">Price: <strong>$12 - $30</strong></span> -->
+              </div>
+            </div>
+          </div>
+        </aside>
+    </div>
+      <div class="col-md-9 col-sm-7 col-xs-12 pull-right">
+        <div class="row">
+
+          <div class="col-md-4 col-xs-6" *ngFor="let product_info of collection.data; index as i;">
+            <div class="box bg-color-{{i%6+1}}">
+              <div class="box-img-1  border-color-{{i%6+1}} text-center">
+                <a href="">
+                  <img src="{{product_info.img[0]}}" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <div class="row">
+                  <div class="col-sm-2">
+                    <div class="non-veg-icon" *ngIf="product_info.status!='enabled' else veg_icon_block">
+                      <div class="non-veg-icon-radius">
+                      </div>
+                    </div>
+                    <ng-template #veg_icon_block>
+                        <div class="veg-icon">
+                            <div class="veg-icon-radius">
+                            </div>
+                          </div>
+                    </ng-template>
+                  </div>
+                  <div class="col-sm-10">
+                    <h4>{{product_info.name}} </h4>
+                  </div>
+                </div>
+                <div class="price">
+                  <span>{{product_info.currency}} {{product_info.price}}</span>
+                </div>
+                <button type="button" class="btn btn-primary" (click)="(product_info.status=='enabled')?openCartModal(i):none;">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pagerArea text-center">
+        <pagination-template [id]="config.id">
+        
+        
+            <div class="custom-pagination">
+              <div class="pagination-previous">
+                <a class="btn btn-primary" *ngIf="!isFirstPage()" (click)="previous()">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>Prev
+                  </a>
+                </div> 
+                <div class="page-number" *ngFor="let page of pages" [class.current]="getCurrent() === page.value">
+                      <span (click)="setCurrent(page.value)" *ngIf="getCurrent() !== page.value">{{ page.label }}</span>
+                    <div *ngIf="getCurrent() === page.value">
+                      <span>{{ page.label }}</span>
+                    </div>
+                </div>
+                <div class="pagination-next">
+                    <a class="btn btn-primary" *ngIf="!isLastPage()" (click)="next()">Next
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                </div>
+            </div>
+        
+          </pagination-template>
+        </div>  
+       
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORDUCT QUICK VIEW MODAL -->
+<div class="modal fade quick-view" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-sm-7 col-xs-12">
+            <div class="product-gallery text-center">
+              <img src="assets/img/canteen/egg_sandwich1.jpg" alt="Product" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-5 col-xs-12">
+            <div class="product-info">
+              <h1 class="product-title">Egg Sandwich</h1>
+              <div class="price">
+                <span>$30</span>
+              </div>
+              <div class="add-cart">
+                <div class="count-input">
+                  <input class="quantity btn-primary" type="text" value="1">
+                  <a class="incr-btn incr-up" data-action="decrease" href="#">
+                    <i class="fa fa-caret-up" aria-hidden="true"></i>
+                  </a>
+                  <a class="incr-btn incr-down" data-action="increase" href="#">
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <a href="cart-page.html" class="add-to-cart btn btn-primary">Add to Cart</a>
+              </div>
+              <br>
+              <div class="share">
+                <span>Share: </span>
+                <ul class="list-inline">
+                  <li>
+                    <a href="https://www.facebook.com/amigo.schools.9" class="bg-color-4">
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/AmigoSchools" class="bg-color-2">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://plus.google.com/102628088833408946519" class="bg-color-3">
+                      <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/channel/UCRQIfnSQOSgBPw_1fzLjaNg" class="bg-color-1">
+                      <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #addCartModal="bs-modal" class="modal fade align-model" id="selectStudents" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="addCartModal.hide()">&times;</button>
+        <div class="veg-icon-2">
+          <div class="veg-icon-radius-2">
+          </div>
+        </div>
+        <span class="cart-text">
+          <strong class="select-option-header">{{collection.data[current_product_index] ? collection.data[current_product_index].name : ''}} </strong>
+          <span class="price-color-1">({{collection.data[current_product_index] ? collection.data[current_product_index].currency : ''}}{{collection.data[current_product_index] ? collection.data[current_product_index].price : ''}})</span>
+        </span>
+      </div>
+      <div class="modal-body">
+
+        <div class="students-name">
+          <p class="select-children-header">Select your children and customize their meal.</p>
+          <div class="row">
+            <div class="col-sm-2" *ngFor="let student_info of (parentInfoService.student_list.length > 0) ? parentInfoService.student_list : []; index as j">
+              <input class="dlg_check_student"  type="checkbox" [(ngModel)]="check_list[j]" id="studentSelect" (change)="displayOption()">
+              <span class="dlg_span_student_name">{{student_info.name}}</span>
+            </div>
+          </div>
+        </div>
+        <hr class="dash" style="margin-top: 5px;margin-bottom: 5px;">
+        <div *ngIf="show_option" id="itemOptions" >
+          <div class="vertical-items">
+
+            <div class="item-name" *ngFor="let optionItem of collection.data[current_product_index]['options']; index as j">
+
+              <div class="non-veg-icon-1" *ngIf="optionItem.status=='false' else veg_icon_1_block">
+                <div class="non-veg-icon-radius-1">
+                </div>
+              </div>
+              <ng-template #veg_icon_1_block>
+                  <div class="veg-icon-1">
+                      <div class="veg-icon-radius-1">
+                      </div>
+                    </div>
+              </ng-template> 
+              <span class="option-checkbox" style="margin-left: 18px;">
+                <label>
+                  <input type="checkbox" [(ngModel)]="check_option_list[j]" (change)="displayPrice()" [disabled]="optionItem.status=='false'">
+                </label> {{optionItem.name}} ( {{collection.data[current_product_index].currency}} {{optionItem.price}} )
+              </span>
+            </div>
+
+            <div class="selected-option">
+              <span id="selectedOption" style="display:none; Color:green">Roll</span>
+            </div>
+            <hr style="margin-top: 5px;margin-bottom: 5px;" style=" border-top: 1px #b9b4b9;">
+
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="price-text wrapper-1" id="totalPrice" *ngIf="show_price">
+                  <b> Price : {{collection.data[current_product_index].currency}} {{total_price}}</b>
+                </span>
+              </div>
+              <div class="col-sm-4">
+                <span class=" wrapper">
+                  <button type="button" class="btn btn-primary" style=" font-size: 12px;" (click)="addToCart();">
+                    <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

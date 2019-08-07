@@ -1,0 +1,21 @@
+.btn-slide-paginater{
+    line-height: 47px;
+    width: 47px;
+    height: 47px;
+    background-color: #ffffff;
+    color: #666666;
+    border-radius: 13px;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 240px;
+}
+.btn-slide-paginater:hover{
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+.btn-slide-paginater.left{
+    left: 20px;
+}
+.btn-slide-paginater.right{
+    right: 20px;
+}

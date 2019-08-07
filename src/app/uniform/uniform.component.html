@@ -1,0 +1,492 @@
+<div class="mainContent1">
+  <div class="row">
+    <div class="container">
+      <div class=" col-md-3 col-sm-12 col-xs-12 col-lg-3  row-padding">
+        <aside>
+          <ol class="breadcrumb breadcrumb-css">
+            <li class="breadcrumb-item">
+              <a href="home.html">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="uniform.html">Uniform</a>
+            </li>
+            <li class="breadcrumb-item active">All categories</li>
+          </ol>
+        </aside>
+      </div>
+      <div class="col-md-9 col-sm-12 col-xs-12 col-lg-9">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Enter Your Search" aria-describedby="basic-addon2">
+          <span class="input-group-addon bg-color-11 datepicker-btn" id="basic-addon2">Search</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT SECTION -->
+<section class="mainContent full-width clearfix productSection">
+  <div class="container">
+    <div class="row">
+          <div class="col-md-3 col-sm-5 col-xs-12 pull-left">
+        <aside>
+          <!--
+        <div class="panel panel-default courseSidebar">
+          <div class="panel-heading bg-color-1 border-color-1">
+            <h3 class="panel-title">Search</h3>
+          </div>
+          <div class="panel-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Enter Your Search" aria-describedby="basic-addon2">
+              <span class="input-group-addon" id="basic-addon2"><input class="btn btn-primary bg-color-1" type="submit" value="Search"></span>
+            </div>
+          </div>
+        </div>
+      -->
+          <div class="panel panel-default courseSidebar">
+            <div class="panel-heading bg-color-5 border-color-5">
+              <h3 class="panel-title">Categories</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="list-unstyled categoryItem">
+                <li>
+                  <a href="boys_uniform.html">Boys Uniform</a>
+                </li>
+                <li>
+                  <a href="girls_uniform.html">Girls Uniform</a>
+                </li>
+                <li>
+                  <a href="">Hats</a>
+                </li>
+                <li>
+                  <a href="">Tie</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel panel-default courseSidebar">
+            <div class="panel-heading bg-color-2 border-color-2">
+              <h3 class="panel-title">Filter By</h3>
+            </div>
+            <div class="panel-body">
+              <div class="lightDrop">
+                <select name="guiest_id4" id="guiest_id4" class="select-drop">
+                  <option value="0">All Classes</option>
+                  <option value="1">2M</option>
+                  <option value="2">3G</option>
+                  <option value="3">4R</option>
+                  <option value="3">5G</option>
+                  <option value="3">6S</option>
+                </select>
+              </div>
+              <div class="priceRange">
+                <div class="price-slider-inner">
+                  <span class="amount-wrapper">
+                    Price:
+                    <input type="text" id="price-amount-1" readonly>
+                    <strong>-</strong>
+                    <input type="text" id="price-amount-2" readonly>
+                  </span>
+                  <div id="price-range"></div>
+                </div>
+                <input class="btn btn-primary bg-color-2" type="submit" value="Filter">
+                <!-- <span class="priceLabel">Price: <strong>$12 - $30</strong></span> -->
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-9 col-sm-7 col-xs-12 pull-right">
+        <div class="row">
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-1">
+              <div class="box-img-2 border-color-1 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/images_uni.jpg" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>2 Pack Boys' Skinny Leg Trousers
+                </h4>
+                <div class="price">
+                  <span>$30</span>
+                </div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#selectStudents">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-2">
+              <div class="box-img-2 border-color-2 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/boys-skinny-leg.jpg" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>2 Pack Boys' Slim Leg Trousers</h4>
+                <div class="price">
+                  <span>$17</span>
+                  <span>
+                    <del>$20</del>
+                  </span>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-6">
+              <div class="box-img-2 border-color-6 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/Iron_shirts.jpg" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>3 Pack Boys' Easy to Iron Shirts</h4>
+                <div class="price">
+                  <span>$20</span>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-4">
+              <div class="box-img-2 border-color-4 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/SD_04_T76_5946_Z0_X_EC_0.jpg" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>3 Pack Girls' Easy to Iron Blouses</h4>
+                <div class="price">
+                  <span>$25</span>
+                  <span>
+                    <del>$30</del>
+                  </span>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-1">
+              <div class="box-img-2 border-color-1 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/002277313alt3.jpg" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>Girls Cotton 2 Pack Skirts</h4>
+                <div class="price">
+                  <span>$50</span>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-6">
+              <div class="box-img-2 border-color-6 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/51lHquhR4fL._UY606_.jpg" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>Girls' Cotton Sports Skorts with Stretch</h4>
+                <div class="price">
+                  <span>$25</span>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-2">
+              <div class="box-img-2 border-color-2 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/c3-hat-front.png" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>Hat</h4>
+                <div class="price">
+                  <span>$10</span>
+                  <span>
+                    <del>$15</del>
+                  </span>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-1">
+              <div class="box-img-2 border-color-1 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/8300w_04_1.jpg" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>Tie</h4>
+                <div class="price">
+                  <span>$50</span>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-xs-6">
+            <div class="box bg-color-2">
+              <div class="box-img-2 border-color-2 text-center">
+                <a href="">
+                  <img src="assets/img/canteen/download.png" alt="image" class="img-responsive">
+                </a>
+              </div>
+              <div class="box-info">
+                <h4>Tie 1 </h4>
+                <div class="price">
+                  <span>$50</span>
+                  <span>
+                    <del>$60</del>
+                  </span>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagerArea text-center">
+          <ul class="pager">
+            <li class="prev">
+              <a href="#">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>Prev</a>
+            </li>
+            <li>
+              <a href="#">1</a>
+            </li>
+            <li>
+              <a href="#">2</a>
+            </li>
+            <li>
+              <a href="#">3</a>
+            </li>
+            <li>
+              <a href="#">...</a>
+            </li>
+            <li>
+              <a href="#">15</a>
+            </li>
+            <li class="next">
+              <a href="#">Next
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORDUCT QUICK VIEW MODAL -->
+<div class="modal fade quick-view" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-md-6 col-sm-7 col-xs-12">
+            <div class="product-gallery text-center">
+              <img src="assets/img/canteen/images_uni.jpg" alt="Product" class="img-responsive">
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-5 col-xs-12">
+            <div class="product-info">
+              <h4 class="product-title">2 Pack Boys' Skinny Leg Trousers</h4>
+              <div class="price">
+                <span>$30</span>
+              </div>
+              <div class="add-cart">
+                <div class="count-input">
+                  <input class="quantity btn-primary" type="text" value="1">
+                  <a class="incr-btn incr-up" data-action="decrease" href="#">
+                    <i class="fa fa-caret-up" aria-hidden="true"></i>
+                  </a>
+                  <a class="incr-btn incr-down" data-action="increase" href="#">
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <a href="cart-page.html" class="add-to-cart btn btn-primary">Add to Cart</a>
+              </div>
+              <br>
+              <div class="share">
+                <span>Share: </span>
+                <ul class="list-inline">
+                  <li>
+                    <a href="https://www.facebook.com/amigo.schools.9" class="bg-color-1">
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/AmigoSchools" class="bg-color-2">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://plus.google.com/102628088833408946519" class="bg-color-3">
+                      <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/channel/UCRQIfnSQOSgBPw_1fzLjaNg" class="bg-color-4">
+                      <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade align-model" id="selectStudents" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <span class="cart-text">
+            <strong style="font-size:16px;margin-left:1px;">2 Pack Boys' Skinny Leg Trousers</strong>
+            <span class="price-color-1">($30)</span>
+          </span>
+      </div>
+      <div class="modal-body">
+        <p class="select-children-header">Select your children and customize their uniform.</p>
+        <div class="row">
+          <div class="col-sm-2">
+            <input type="checkbox" value="" id="studentSelect" onclick="displayOption()">
+            <span>Jack</span>
+          </div>
+          <div class="col-sm-2">
+            <input type="checkbox" value="" id="studentSelect" onclick="displayOption()">
+            <span>David</span>
+          </div>
+          <div class="col-sm-2">
+            <input type="checkbox" value="" id="studentSelect" onclick="displayOption()">
+            <span>John</span>
+          </div>
+          <div class="col-sm-2">
+            <input type="checkbox" value="" id="studentSelect" onclick="displayOption()">
+            <span>Smith</span>
+          </div>
+          <div class="col-sm-3">
+            <input type="checkbox" value="" id="studentSelect" onclick="displayOption()">
+            <span>Christel</span>
+          </div>
+        </div>
+        <hr class="dash" style="margin-top: 5px;margin-bottom: 5px;">
+        <div id="itemOptions" style="display:none;">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <span style="color:blue">Select Size</span>
+              <div class="item-name">
+                <div class="option-checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                  </label> S ( $1.00 )
+                </div>
+                <div class="option-checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                  </label> M ( $1.00 )
+                </div>
+                <div class="option-checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                  </label> L ( $2.00 )
+                </div>
+                <div class="option-checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                  </label> XL ( $2.00 )
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <span style="color:blue">Select Color</span>
+              <div class="item-name">
+                <div class="option-checkbox">
+                  <label>
+                    <input type="checkbox" value="" onclick="displayPrice()">
+                  </label> Green ( $1.00 )
+                </div>
+                <div class="option-checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                  </label> Blue ( $1.00 )
+                </div>
+                <div class="option-checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                  </label> Red ( $2.00 )
+                </div>
+                <div class="option-checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                  </label> White ( $2.00 )
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="selected-option">
+            <span id="selectedOption" style="display:none; Color:green">S, Green</span>
+          </div>
+          <hr style="margin-top: 5px;margin-bottom: 5px;" style=" border-top: 1px #b9b4b9;">
+          <div class="row">
+            <div class="col-sm-8">
+              <span class="price-text wrapper-1" id="totalPrice" style="display:none;">
+                <b> Price : $32</b>
+              </span>
+            </div>
+            <div class="col-sm-4">
+              <span class=" wrapper">
+                <button type="button" class="btn btn-primary" id="addToCart" onclick="addTocart()" style=" font-size: 12px;">
+                  <i class="fa fa-shopping-basket " aria-hidden="true"></i>Add to Cart</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

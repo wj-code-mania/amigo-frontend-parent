@@ -1,0 +1,324 @@
+<br>
+<div class="row">
+  <div class="col-sm-9">
+    <section class="mainContent full-width clearfix">
+      <div class="">
+        <div class="panel panel-default cart-panel-margin">
+          <div class="panel-heading">
+            <strong>Canteen Order</strong>
+          </div>
+          <div class="panel-body cart-panel-body">
+            <form action="#">
+              <div class="cartInfo">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <tr *ngFor="let cart_info of parentInfoService.cart_list; index as cart_info_index" >
+                        <td class="cart-table-td table-border">
+                          <span class="cartImage"  *ngFor="let product_item of cart_info.productInfo">
+                            <img src="{{product_item.img}}" alt="image" class="img-rounded" >
+                          </span>
+                        </td>
+                        <td style="padding: 0px !important;" class="table-border">
+                          <strong>{{cart_info.productInfo[0].name}}</strong> | Student :<strong *ngFor="let student_info of cart_info.studentList; last as l"> {{student_info.name + (l ? "" : ",")}}</strong> | Qty.
+                          <strong><span>
+                            <input type="number" min=1  class="input-small" style = "height: 200%;" 
+                              value="{{cart_info.qty}}" (click)="parentInfoService.changeQty(cart_info.id,$event)" 
+                              (change)="parentInfoService.changeQty(cart_info.id,$event)"/>
+                          </span></strong>.
+                          <!-- <strong>{{cart_info.qty}}</strong>. -->
+                          <br>
+                          <p style="margin:0px"> Option : <span *ngFor = "let option_info of cart_info.options; last as l">{{option_info.name + ((l) ? "" : ",")}} </span></p>
+                          <p (click)="showCustomizeCartItem(cart_info_index)" style="color: blue" class="customize">
+                            <i class="fa fa-cart-arrow-down customizeCartItem" style="font-size: 14px;">&nbsp;&nbsp;Customize</i>
+                          </p>
+                          <i class="fa fa-trash-o removeCartItem" style="font-size:24px" (click) = "removeCartItem(cart_info.id);"></i>
+                          &nbsp;&nbsp;
+                          <i class="fa fa-heart-o commentCartItem" (click)="showCommentCartItem(cart_info_index);" style="font-size:20px;"></i>
+                        </td>
+                        <td class="table-border cart-price vertical_align" style="border:0px !important;">
+                          <strong>$ {{cart_info.amount}}</strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="panel panel-default cart-panel-margin">
+          <div class="panel-heading">
+            <strong>Uniform Order</strong>
+          </div>
+          <div class="panel-body cart-panel-body">
+            <form action="#">
+              <div class="cartInfo">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td class="cart-table-td table-border">
+                          <span class="cartImage">
+                            <img src="img/canteen/images_uni.jpg" alt="image" class="img-rounded">
+                          </span>
+                        </td>
+                        <td style="padding: 0px !important; width:50%;" class="table-border"><strong>2 Pack Boys' Skinny Leg Trousers </strong> | Student :<strong> Jack.</strong> | Qty. <strong>1</strong>.
+                          <br>
+                          <p style="margin:0px">Size: S , Color: Green</p>
+                          <p data-toggle="modal" data-target="#myCustomize1" style="color: blue" class="customize">Customize</p>
+                          <i class="fa fa-trash-o" style="font-size:24px"></i>
+                          <i class="fa fa-heart-o" style="font-size:20px;"></i>
+                        </td>
+                        <td class="table-border cart-price vertical_align" style="border:0px !important;">
+                          <strong>$ 32.00</strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="panel panel-default cart-panel-margin">
+          <div class="panel-heading">
+            <strong>Event Order</strong>
+          </div>
+          <div class="panel-body cart-panel-body">
+            <form action="#">
+              <div class="cartInfo">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td class="cart-table-td table-border">
+                          <span class="cartImage">
+                            <img src="img/event/1.jpg" alt="image" class="img-rounded">
+                          </span>
+                        </td>
+                        <td style="padding: 0px !important; width:50%;" class="table-border"><strong>Phasellus Convallis Eros</strong> | Student :<strong> Jack.</strong> | Qty. <strong>1</strong>.
+                          <br>
+                          <p data-toggle="modal" data-target="#myCustomize3" style="color: blue" class="customize">Customize</p>
+                          <i class="fa fa-trash-o" style="font-size:24px"></i>
+                          <i class="fa fa-heart-o" style="font-size:20px;"></i>
+                        </td>
+                        <td class="table-border cart-price vertical_align" style="border:0px !important;">
+                          <strong>$ 50.00</strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="panel panel-default cart-panel-margin">
+            <div class="panel-heading">
+              <strong>Bus Booking</strong>
+            </div>
+            <div class="panel-body cart-panel-body">
+              <form action="#">
+                <div class="cartInfo">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td class="cart-table-td table-border">
+                            <span class="cartImage">
+                              <img src="img/bus_booking/bus.jpg" alt="image" class="img-rounded">
+                            </span>
+                          </td>
+                          <td style="padding: 0px !important; width:50%;" class="table-border"><strong>Single Day Pass</strong> | Student :<strong> Jack.</strong> | Qty. <strong>1</strong>.
+                            <br>
+                            <p data-toggle="modal" data-target="#myCustomize4" style="color: blue" class="customize">Customize</p>
+                            <i class="fa fa-trash-o" style="font-size:24px"></i>
+                            <i class="fa fa-heart-o" style="font-size:20px;"></i>
+                          </td>
+                          <td class="table-border cart-price vertical_align" style="border:0px !important;">
+                            <strong>$ 12.00</strong>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+      </div>
+    </section>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <button type="button" class="btn btn-lg coupon" data-toggle="modal" data-target="#myCoupon">APPLY COUPONS</button>
+      
+
+      <strong>ORDER SUMMARY</strong>
+      <br>
+      <table class="table">
+        <tr>
+          <td class="cart-table-border">Total Price</td>
+          <td class="price-align" >$ {{parentInfoService.cart_sub_total}}</td>
+        </tr>
+        <tr>
+          <td class="cart-table-border">UK Vat</td>
+          <td class="price-align">$ 2.41</td>
+        </tr>
+        <hr>
+        <tr>
+          <td class="cart-table-border"><strong>TOTAL PAYABLE</strong></td>
+          <td class="price-align"><strong>$ 143.41</strong></td>
+        </tr>
+      </table>
+      <hr>
+      <a href="checkout-step-2.html" class="btn checkout-btn">Proceed To Checkout &nbsp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+      <hr>
+      <button class="btn empty-cart-btn" (click)="parentInfoService.emptyCart();">Empty Cart &nbsp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- Modal Def-->
+<div bsModal #customizeCartItemModal="bs-modal" class="modal fade align-model" id="customizeCartItem" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="non-veg-icon-2">
+          <div class="non-veg-icon-radius-2">
+          </div>
+        </div>
+        <span class="cart-text">
+          <strong style="font-size:16px;margin-left:20px;">
+            {{(cur_selected_cart_id >= 0) ? parentInfoService.cart_list[cur_selected_cart_id].productInfo[0].name : ""}}
+          </strong>
+          <span class="price-color-1">($ {{ 
+            (cur_selected_cart_id >= 0) ? parentInfoService.cart_list[cur_selected_cart_id].amount : ""
+          }})</span>
+        </span>
+      </div>
+      <div class="modal-body">
+        <div class="students-name">
+          <p class="select-children-header">Select your children and customize their meal.</p>
+          <div class="row">
+            <div class="col-sm-2" *ngFor="let student_info of (cur_selected_cart_id >= 0) ? parentInfoService.cart_list[cur_selected_cart_id].studentList : []; index as j">
+              <input class="dlg_check_student"  (change)="displayOption()" type="checkbox" [(ngModel)]="check_list[j]" id="studentSelect">
+              <span class="dlg_span_student_name">{{student_info.name}}</span>
+            </div>
+          </div>
+        </div>
+        <hr class="dash" style="margin-top: 5px;margin-bottom: 5px;">
+        <div id="itemOptions" >
+          <div class="vertical-items">
+            <div class="item-name" *ngFor="let optionItem of product_info.options; index as j">
+                <div class="non-veg-icon-1" *ngIf="optionItem.status=='false' else veg_icon_1_block">
+                  <div class="non-veg-icon-radius-1">
+                  </div>
+                </div>
+                <ng-template #veg_icon_1_block>
+                    <div class="veg-icon-1">
+                        <div class="veg-icon-radius-1">
+                        </div>
+                      </div>
+                </ng-template> 
+                <span class="option-checkbox" style="margin-left: 18px;">
+                  <label>
+                    <input type="checkbox" [(ngModel)]="check_option_list[j]" (change)="displayPrice()" 
+                    [disabled]="optionItem.status=='false'" 
+                    >
+
+                  </label> 
+                  {{optionItem.name}} ( {{product_info.currency}} {{optionItem.price}} )
+                </span>
+              </div>
+            <div class="selected-option">
+              <span id="selectedOption" style="Color:green">Roll</span>
+            </div>
+            <hr style="margin-top: 5px;margin-bottom: 5px;" style=" border-top: 1px #b9b4b9;">
+
+            <div class="row">
+              <div class="col-sm-8">
+                <span class="price-text wrapper-1" id="totalPrice">
+                  <b> Price : $31</b>
+                </span>
+              </div>
+              <div class="col-sm-4">
+                <span class=" wrapper">
+                  <button type="button" class="btn btn-primary" id="addToCart" 
+                    (click) = "save_cart()" style=" font-size: 12px;" class="close" 
+                    data-dismiss="modal ">
+                    <i class="fa fa-shopping-basket " aria-hidden="true"></i>Save Cart</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #commentModal="bs-modal" class="modal fade align-model" id="commentCartItem" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="non-veg-icon-2">
+          <div class="non-veg-icon-radius-2">
+          </div>
+        </div>
+        <span class="cart-text">
+          <strong style="font-size:16px;margin-left:20px;">Put comment 
+            [ {{
+              (cur_selected_cart_id >= 0) ? parentInfoService.cart_list[cur_selected_cart_id].productInfo[0].name : ""
+            }} ]
+          </strong>
+        </span>
+      </div>
+      <div class="modal-body">
+        <div class="students-name">
+          <h5>Select student to choose option</h5>
+          <div class="row">
+            <div class="col-sm-2" *ngFor="let student_info of (cur_selected_cart_id >= 0) ? parentInfoService.cart_list[cur_selected_cart_id].studentList : [] ; last as l">
+              <input type="checkbox" value="{{student_info.name}}" id="studentSelect">&nbsp;&nbsp;
+              <span class="">{{student_info.name}}</span>
+            </div>
+          </div>
+        </div>
+        <hr class="dash" style="margin-top: 5px; margin-bottom: 5px;">
+        <div id="itemOptions">
+          <div class="vertical-items">
+            <div class="item-name">
+              <textarea class = "commentTextArea" id = "textarea_comment">
+                {{
+                  (cur_selected_cart_id >= 0) ? parentInfoService.cart_list[cur_selected_cart_id].comments : ""
+                }}
+              </textarea>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <span class=" wrapper">
+                  <button type="button" class="btn btn-primary" (click) = "saveComment()" style=" font-size: 12px;" class="close
+                    " data-dismiss="modal ">
+                    <i class="fa fa-shopping-basket " aria-hidden="true"></i>save comment</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal -->

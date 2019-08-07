@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href='css/fullcalendar.min.css' rel='stylesheet' />
+  <script src='lib/moment.min.js'></script>
+  <script src='lib/jquery.min.js'></script>
+  <script src='js/fullcalendar.js'></script>
+  <script src='js/fullcalendar-custom.js'></script>
+
+  
+  
+  
+  
+  
+  
+  <meta NAME="DESCRIPTION" CONTENT="School Canteen ordering,place order for child’s lunch and snacks school canteen,School Uniform Booking,Event Booking,One stop solution schools,parents with easy payments and mobile responsive platform,Easy Payments">
+  <meta NAME="keywords" CONTENT="school, canteen, meal, uniform, event, meal ordering, volunteer roster in australia, in UK, in south africa, bus booking">
+  <title>Volunteering - AMIGO SCHOOLS</title>
+
+  <!-- PLUGINS CSS STYLE -->
+  <link href="plugins/jquery-ui/jquery-ui.css" rel="stylesheet">
+  <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="plugins/rs-plugin/css/settings.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="plugins/selectbox/select_option1.css">
+  <link rel="stylesheet" type="text/css" href="plugins/owl-carousel/owl.carousel.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="plugins/isotope/jquery.fancybox.css">
+  <link rel="stylesheet" type="text/css" href="plugins/isotope/isotope.css">
+
+  <!-- GOOGLE FONT -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Dosis:400,300,600,700' rel='stylesheet' type='text/css'>
+  
+  <!-- CUSTOM CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/default.css" id="option_color">
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/toastr.css" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/logo/amigo-logo.ico">
+
+  <script>
+
+    function register (){
+      window.location.href = 'rota-new.html';
+    }
+    
+    var add_button = '<input type="button" value="+" />';
+    $(".fc-day-number").prepend(add_button);
+
+    $(document).ready(function () {
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right:'',
+          //right: 'month,agendaWeek,listMonth',
+
+        },
+        defaultDate: '2018-08-01',
+        navLinks: true, // can click day/week names to navigate views
+        businessHours: true, // display business hours
+        editable: true,
+
+        events: [
+          {
+            title: 'Lunch \n We have 2 \n1.Lewis Hamilton\n 2.Gareth Bala \n\n We need 1',
+            start: '2018-08-21',
+            end: '2018-08-21',
+            color: '#2280F9',
+          },
+          {
+            title: 'Recess \n We have 1 \n1.Lewis Hamilton\n\n We need 2',
+            start: '2018-08-13',
+            end: '2018-08-13',
+            color: '#2280F9'
+          },
+          {
+            title: 'Conference \n We have 1 \n 1.Andy Murray \n\n We are Ok ',
+            start: '2018-08-24',
+            end: '2018-08-24',
+            color: '#2280F9'
+          },
+          {
+            title: 'Metting \n We have 2 \n 1.Andy Murray \n 2.Gareth Bala \n\n We need 1',
+            start: '2018-08-29',
+            end: '2018-08-29',
+            color: '#2280F9'
+          },
+          {
+            title: 'Lunch \n We have 2 \n 1.Andy Murray\n 2.Gareth Bala \n\n We need 1',
+            start: '2018-07-27',
+            end: '2018-07-27',
+            color: '#2280F9'
+          },
+          {
+            title: 'Recess \n We have 1 \n 1.Andy Murray \n\n We are Ok',
+            start: '2018-07-12',
+            end: '2018-07-12',
+            color: '#2280F9'
+          },
+          {
+            title: 'Conference \n We have 2 \n1.Lewis Hamilton\n\n We need 1',
+            start: '2018-07-16',
+            end: '2018-07-16',
+            color: '#2280F9'
+          },
+          {
+            title: 'Fun Day \n We have 1 \n1.Lewis Hamilton\n\n We need 2',
+            start: '2018-08-10',
+            end: '2018-08-10',
+            color: '#2280F9'
+          },
+          {
+            title: 'Metting \n We have 1\n 1.Gareth Bala \n\n We need 1',
+            start: '2018-07-03',
+            end: '2018-07-03',
+            color: '#2280F9',
+          },
+          {
+            title: 'Fun Day \n We have 2 \n 1.Lewis Hamilton \n 2.Andy Murray \n\n We are OK',
+            start: '2018-08-02',
+            end: '2018-08-02',
+            color: '#2280F9'
+          },
+
+          // areas where "Meeting" must be dropped
+          {
+            id: 'availableForMeeting',
+            start: '2018-03-11T10:00:00',
+            end: '2018-03-11T16:00:00',
+            rendering: 'background'
+          },
+          {
+            id: 'availableForMeeting',
+            start: '2018-03-13T10:00:00',
+            end: '2018-03-13T16:00:00',
+            rendering: 'background'
+          },
+
+        ]
+      });
+
+    });
+
+  </script>
+  <style>
+    body {
+      margin: 40px 10px;
+      padding: 0;
+      font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+      font-size: 14px;
+    }
+
+    #calendar {
+      max-width: 1130px;
+      margin: 0 auto;
+      padding-top: 50px !important ;
+      padding-bottom: 50px !important ;
+    }
+  </style>
+</head>
+
+<body class="body-wrapper" style="margin:0 !important">
+
+  <div class="main-wrapper">
+  <!-- HEADER -->
+  <header id="pageTop" class="header-wrapper">  
+    <!-- COLOR BAR -->
+    <div class="container-fluid color-bar top-fixed clearfix">
+      <div class="row">
+        <div class="col-sm-1 col-xs-2 bg-color-1">fix bar</div>
+        <div class="col-sm-1 col-xs-2 bg-color-2">fix bar</div>
+        <div class="col-sm-1 col-xs-2 bg-color-3">fix bar</div>
+        <div class="col-sm-1 col-xs-2 bg-color-4">fix bar</div>
+        <div class="col-sm-1 col-xs-2 bg-color-5">fix bar</div>
+        <div class="col-sm-1 col-xs-2 bg-color-6">fix bar</div>
+        <div class="col-sm-1 bg-color-1 hidden-xs">fix bar</div>
+        <div class="col-sm-1 bg-color-2 hidden-xs">fix bar</div>
+        <div class="col-sm-1 bg-color-3 hidden-xs">fix bar</div>
+        <div class="col-sm-1 bg-color-4 hidden-xs">fix bar</div>
+        <div class="col-sm-1 bg-color-5 hidden-xs">fix bar</div>
+        <div class="col-sm-1 bg-color-6 hidden-xs">fix bar</div>
+      </div>
+    </div>
+
+    <!-- TOP INFO BAR -->
+    <div class="top-info-bar bg-color-7 hidden-xs">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-11">
+            <ul class="list-inline topList">
+              <li>
+                <i class="fa fa-envelope bg-color-1" aria-hidden="true"></i>
+                <a href="mailto:info@amigoschools.com">info@amigoschools.com</a>
+              </li>
+              <li>
+                <i class="fa fa-phone bg-color-2" aria-hidden="true"></i> +1 234 567 8900</li>
+              <li>
+                <i class="fa fa-clock-o bg-color-6" aria-hidden="true"></i> Open: 9am - 6pm</li>
+            </ul>
+          </div>
+          <div class="col-sm-1">
+            <ul class="list-inline functionList">
+              <li>
+                <a href="index.html">
+                  <i class="fa fa-sign-out sign-out"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=""><img src="img/logo/amigo-logo.png" alt="Amigo School" class="logo-css"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown singleDrop color-1    ">
+              <a href="home.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-home bg-color-22" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dropdown singleDrop color-3 ">
+              <a href="canteen.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-cutlery bg-color-21" aria-hidden="true"></i>
+                <span >Canteen</span>
+              </a>
+            </li>
+            <li class=" dropdown megaDropMenu color-2  ">
+              <a href="uniform.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-female bg-color-24" aria-hidden="true"></i>
+                <span>Uniform</span>
+              </a>
+            </li>
+            <li class="dropdown singleDrop color-4 ">
+              <a href="all-events.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-music bg-color-23" aria-hidden="true"></i>
+                <span> School Event</span>
+              </a>
+            </li>
+            <li class="dropdown singleDrop color-4">
+              <a href="bus-booking.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-bus bg-color-6" aria-hidden="true"></i>
+                <span>Bus Booking</span>
+              </a>
+            </li>
+            <li class="dropdown singleDrop color-1  active">
+              <a href="rota.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-users bg-color-22" aria-hidden="true"></i>
+                <span class="active">Volunteering</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <div id='calendar'></div>
+  
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <!-- COPY RIGHT -->
+    <div class="copyRight clearfix">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 col-sm-push-7 col-xs-12">
+            <ul class="list-inline">
+              <li>
+                <a href="https://www.facebook.com/amigo.schools.9" class="bg-color-4">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/AmigoSchools" class="bg-color-2">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/102628088833408946519" class="bg-color-3">
+                  <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCRQIfnSQOSgBPw_1fzLjaNg" class="bg-color-1">
+                  <i class="fa fa-youtube" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-7 col-sm-pull-5 col-xs-12">
+            <div class="copyRightText">
+              <p>© 2018 Copyright Amigo Schools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
