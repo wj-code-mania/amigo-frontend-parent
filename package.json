@@ -24,7 +24,7 @@
     "angular-bootstrap-datetimepicker": "^3.0.0",
     "core-js": "^2.5.4",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
     "jquery-validation": "^1.17.0",
     "ng-simple-slideshow": "^1.2.9",
